@@ -1,4 +1,4 @@
-// Frontend JavaScript
+// Frontend JavaScript (script.js)
 document.addEventListener('DOMContentLoaded', () => {
   const downloadBtn = document.getElementById('download-btn');
   const resolutionSelect = document.getElementById('resolution-select');
