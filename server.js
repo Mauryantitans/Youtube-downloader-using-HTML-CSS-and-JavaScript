@@ -7,9 +7,10 @@ app.use(express.static('public'));
 
 app.get('/download', (req, res) => {
   const videoUrl = req.query.url;
+  const resolution = req.query.resolution || 'best';
 
-  // Download video using youtube-dl
-  const video = youtubedl(videoUrl, ['--format=mp4']);
+  // Download video using youtube-dl with the specified resolution
+  const video = youtubedl(videoUrl, ['--format=mp4', `--format=${resolution}`]);
 
   video.on('info', (info) => {
     const videoTitle = info._filename;
