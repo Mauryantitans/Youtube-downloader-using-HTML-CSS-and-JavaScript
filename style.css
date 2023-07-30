@@ -5,17 +5,31 @@ body {
 }
 
 header {
-  /* Styling for the header section */
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
 }
 
 main {
-  /* Styling for the main content section */
+  padding: 20px;
 }
 
 #video-form {
-  /* Styling for the video download form */
+  margin-bottom: 20px;
+}
+
+#video-url, #resolution-select {
+  margin-right: 10px;
 }
 
 #download-links {
-  /* Styling for the download links section */
+  margin-top: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
 }
