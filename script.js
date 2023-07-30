@@ -1,15 +1,22 @@
 // Frontend JavaScript
 document.addEventListener('DOMContentLoaded', () => {
   const downloadBtn = document.getElementById('download-btn');
+  const resolutionSelect = document.getElementById('resolution-select');
+  const videoUrlInput = document.getElementById('video-url');
+
   downloadBtn.addEventListener('click', () => {
-    const videoUrl = document.getElementById('video-url').value;
+    const videoUrl = videoUrlInput.value;
+    const selectedResolution = resolutionSelect.value;
+
     if (videoUrl.trim() !== '') {
-      downloadVideo(videoUrl);
+      downloadVideo(videoUrl, selectedResolution);
     }
   });
 
-  function downloadVideo(url) {
-    fetch(`/download?url=${encodeURIComponent(url)}`)
+  function downloadVideo(url, resolution) {
+    const downloadUrl = `/download?url=${encodeURIComponent(url)}&resolution=${encodeURIComponent(resolution)}`;
+
+    fetch(downloadUrl)
       .then((response) => response.blob())
       .then((blob) => {
         const url = window.URL.createObjectURL(new Blob([blob]));
