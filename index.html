@@ -2,16 +2,22 @@
 <html>
 <head>
   <title>YouTube Video Downloader</title>
-  <!-- Add necessary meta tags, stylesheets, and scripts -->
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <header>
-    <!-- Your website header content -->
+    <h1>YouTube Video Downloader</h1>
   </header>
   <main>
     <section id="video-form">
       <h2>Download YouTube Videos</h2>
       <input type="text" id="video-url" placeholder="Enter YouTube Video URL">
+      <select id="resolution-select">
+        <option value="best">Best Quality</option>
+        <option value="720">720p</option>
+        <option value="480">480p</option>
+        <option value="360">360p</option>
+      </select>
       <button id="download-btn">Download</button>
     </section>
     <section id="download-links">
@@ -19,7 +25,9 @@
     </section>
   </main>
   <footer>
-    <!-- Your website footer content -->
+    <p>&copy; 2023 Your Website</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
