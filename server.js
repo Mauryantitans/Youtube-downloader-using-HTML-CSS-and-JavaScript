@@ -13,7 +13,10 @@ app.get('/download', (req, res) => {
   const video = youtubedl(videoUrl, ['--format=mp4', `--format=${resolution}`]);
 
   video.on('info', (info) => {
-    const videoTitle = info._filename;
+    // Get the video format and set the appropriate file extension
+    const ext = info.ext;
+    const videoTitle = `${info._filename}.${ext}`;
+
     res.setHeader('Content-disposition', `attachment; filename=${videoTitle}`);
     video.pipe(res);
   });
